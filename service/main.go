@@ -127,7 +127,7 @@ func handlerPost(w http.ResponseWriter, r *http.Request) {
 	mut.Set("post", "message", t, []byte(p.Message))
 	mut.Set("location", "lat", t, []byte(strconv.FormatFloat(p.Location.Lat, 'f', -1, 64)))
 	mut.Set("location", "lon", t, []byte(strconv.FormatFloat(p.Location.Lon, 'f', -1, 64)))
-	err = tbl.Apply(ctx, "com.google.cloud", mut)
+	err = tbl.Apply(ctx, id, mut)
 	if err != nil {
 		panic(err)
 		return
