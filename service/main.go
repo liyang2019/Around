@@ -31,8 +31,8 @@ const (
 	TYPE = "post"
 	DISTANCE = "200km"
 	// Needs to update
-	//PROJECT_ID = "around-xxx"
-	//BT_INSTANCE = "around-post"
+	PROJECT_ID = "folkloric-stone-180122"
+	BT_INSTANCE = "around-post"
 	// Needs to update this URL if you deploy it to cloud.
 	ES_URL = "http://35.162.135.253:9200"
 )
@@ -116,7 +116,7 @@ func handlerPost(w http.ResponseWriter, r *http.Request) {
 
 	ctx := context.Background()
 	// you must update project name here
-	bt_client, err := bigtable.NewClient(ctx, "folkloric-stone-180122", "around-post")
+	bt_client, err := bigtable.NewClient(ctx, PROJECT_ID, BT_INSTANCE)
 	if err != nil {
 		panic(err)
 		return
