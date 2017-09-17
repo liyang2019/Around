@@ -109,9 +109,7 @@ func handlerPost(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 		return
 	}
-
 	//fmt.Fprintf(w, "Post received: %s\n", p.Message)
-
 	fmt.Printf( "Post is saved to Index: %s\n", p.Message)
 
 	ctx := context.Background()
@@ -122,7 +120,7 @@ func handlerPost(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	tbl := bt_client.Open("mytable")
+	tbl := bt_client.Open("post")
 	mut := bigtable.NewMutation()
 	t := bigtable.Now()
 	mut.Set("post", "user", t, []byte(p.User))
