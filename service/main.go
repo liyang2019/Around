@@ -9,8 +9,8 @@ import (
 	"strconv"
 	"reflect"
 	"github.com/pborman/uuid"
-	"cloud.google.com/go/bigtable"
-	"context"
+	//"cloud.google.com/go/bigtable"
+	//"context"
 )
 
 
@@ -31,8 +31,8 @@ const (
 	TYPE = "post"
 	DISTANCE = "200km"
 	// Needs to update
-	PROJECT_ID = "folkloric-stone-180122"
-	BT_INSTANCE = "around-post"
+	//PROJECT_ID = "folkloric-stone-180122"
+	//BT_INSTANCE = "around-post"
 	// Needs to update this URL if you deploy it to cloud.
 	ES_URL = "http://35.162.135.253:9200"
 )
@@ -111,11 +111,7 @@ func handlerPost(w http.ResponseWriter, r *http.Request) {
 	}
 	//fmt.Fprintf(w, "Post received: %s\n", p.Message)
 	fmt.Printf( "Post is saved to Index: %s\n", p.Message)
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> e36cae4778678fd90e457266a2e16efce751d4b4
 	/*
 	ctx := context.Background()
 	// you must update project name here
@@ -139,11 +135,6 @@ func handlerPost(w http.ResponseWriter, r *http.Request) {
 	}
 	fmt.Printf("Post is saved to BigTable: %s\n", p.Message)
 	*/
-<<<<<<< HEAD
-=======
-
->>>>>>> e36cae4778678fd90e457266a2e16efce751d4b4
-
 
 }
 
