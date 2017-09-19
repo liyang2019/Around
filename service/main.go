@@ -112,6 +112,7 @@ func handlerPost(w http.ResponseWriter, r *http.Request) {
 	//fmt.Fprintf(w, "Post received: %s\n", p.Message)
 	fmt.Printf( "Post is saved to Index: %s\n", p.Message)
 
+	/*
 	ctx := context.Background()
 	// you must update project name here
 	bt_client, err := bigtable.NewClient(ctx, PROJECT_ID, BT_INSTANCE)
@@ -133,6 +134,7 @@ func handlerPost(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	fmt.Printf("Post is saved to BigTable: %s\n", p.Message)
+	*/
 
 
 
