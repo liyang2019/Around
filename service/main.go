@@ -111,7 +111,11 @@ func handlerPost(w http.ResponseWriter, r *http.Request) {
 	}
 	//fmt.Fprintf(w, "Post received: %s\n", p.Message)
 	fmt.Printf( "Post is saved to Index: %s\n", p.Message)
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> e36cae4778678fd90e457266a2e16efce751d4b4
 	/*
 	ctx := context.Background()
 	// you must update project name here
@@ -135,6 +139,10 @@ func handlerPost(w http.ResponseWriter, r *http.Request) {
 	}
 	fmt.Printf("Post is saved to BigTable: %s\n", p.Message)
 	*/
+<<<<<<< HEAD
+=======
+
+>>>>>>> e36cae4778678fd90e457266a2e16efce751d4b4
 
 
 }
