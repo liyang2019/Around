@@ -35,7 +35,7 @@ const (
 	//PROJECT_ID = "folkloric-stone-180122"
 	//BT_INSTANCE = "around-post"
 	// Needs to update this URL if you deploy it to cloud.
-	ES_URL = "http://35.162.135.253:9200"
+	ES_URL = "http://34.209.53.251:9200"
 )
 
 
