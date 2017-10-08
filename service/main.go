@@ -11,6 +11,7 @@ import (
 	"github.com/pborman/uuid"
 	//"cloud.google.com/go/bigtable"
 	//"context"
+	"strings"
 )
 
 
@@ -87,6 +88,10 @@ func handlerPost(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 		return
 	}
+	// for debug use.
+	// fmt.Printf( "Post received: %s\n", p.User)
+	// fmt.Printf( "Post received: %s\n", p.Message)
+	// fmt.Printf( "Post received: %s\n", p.Location)
 
 	// Add a document to the index
 	client, err := elastic.NewClient(elastic.SetURL(ES_URL), elastic.SetSniff(false))
@@ -112,6 +117,7 @@ func handlerPost(w http.ResponseWriter, r *http.Request) {
 	//fmt.Fprintf(w, "Post received: %s\n", p.Message)
 	fmt.Printf( "Post is saved to Index: %s\n", p.Message)
 
+	// google big table
 	/*
 	ctx := context.Background()
 	// you must update project name here
@@ -188,7 +194,9 @@ func handlerSearch(w http.ResponseWriter, r *http.Request) {
 		p := item.(Post) // p = (Post) item
 		fmt.Printf("Post by %s: %s at lat %v and lon %v\n", p.User, p.Message, p.Location.Lat, p.Location.Lon)
 		// TODO(student homework): Perform filtering based on keywords such as web spam etc.
-		ps = append(ps, p)
+		if (strings.Contains(p.Message, "Ass")) {
+			ps = append(ps, p)
+		}
 	}
 	js, err := json.Marshal(ps)
 	if err != nil {
